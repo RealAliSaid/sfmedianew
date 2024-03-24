@@ -79,27 +79,10 @@
   color: var(--font-color);
 }
 
-.hero_glow {
-  /* Divider */
-
-  width: 32px;
-  height: 0px;
-
-  border: 4px solid #acbbac;
-  box-shadow: 0px 0px 25.8048px #ffffff, 0px 0px 14.7456px #ffffff,
-    0px 0px 8.6016px #ffffff, 0px 0px 4.3008px #ffffff, 0px 0px 1.2288px #ffffff,
-    0px 0px 0.6144px #ffffff;
-
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 5rem;
-  margin-bottom: 2.5rem;
-}
-
 .hero_text {
   font-size: 65px;
-  text-align: center;
-  background: radial-gradient(50% 50% at 50% 50%, #ffffff 66%, #8b928b 100%);
+  text-align: start;
+  background: radial-gradient(50% 50% at 50% 50%, #ffffff 66%, #626262 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -136,7 +119,7 @@
   .home {
     max-height: 100%;
     position: static;
-    margin-top: 12rem;
+    margin-top: 2.5rem;
   }
 
   .hero {

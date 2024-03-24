@@ -5,7 +5,6 @@ import styles from './Home.module.css';
 const Home = () => {
   return (
     <div className={styles.home} id="startseite">
-      <div className={styles.hero_glow} />
       <p className={styles.hero_text}>
         Deine Ideen, konkret umgesetzt ob Webdesign, Social Media oder Leads.
         Wir setzen deine Ideen konkret um. Ob Social Media, Webdesign oder
@@ -15,7 +14,7 @@ const Home = () => {
       <a
         className={styles.calendy_button}
         target="_blank"
-        href="https://calendly.com/alexis-bouchama/30min">
+        href="https://calendly.com/alexis-bouchama/meeting-call">
         Work with Us!
       </a>
     </div>
