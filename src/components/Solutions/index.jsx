@@ -1,16 +1,16 @@
-import React, { useRef, useEffect } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import useScrollRotateAnimation from "../../hooks/useScrollRotateAnimation";
-import crosshair from "../../assets/images/decorations/crosshair.svg";
-import circles from "../../assets/images/decorations/circles.svg";
-import circleDashed from "../../assets/images/decorations/circleDashed.svg";
-import styles from "./Solutions.module.css";
-import SolutionItem from "./SolutionItems/index";
+import React, {useRef, useEffect} from 'react';
+import {gsap} from 'gsap';
+import {ScrollTrigger} from 'gsap/ScrollTrigger';
+import useScrollRotateAnimation from '../../hooks/useScrollRotateAnimation';
+import crosshair from '../../assets/images/decorations/crosshair.svg';
+import circles from '../../assets/images/decorations/circles.svg';
+import circleDashed from '../../assets/images/decorations/circleDashed.svg';
+import styles from './Solutions.module.css';
+import SolutionItem from './SolutionItems/index';
 
 gsap.registerPlugin(ScrollTrigger);
 
-function Solutions({ scrollWidth }) {
+function Solutions({scrollWidth}) {
   useScrollRotateAnimation(styles.circleDashed);
 
   const solutionsListRef = useRef(null);
@@ -29,7 +29,7 @@ function Solutions({ scrollWidth }) {
     children.forEach((child, index) => {
       gsap.fromTo(
         child,
-        { autoAlpha: 0, y: 100 },
+        {autoAlpha: 0, y: 100},
         {
           autoAlpha: 1,
           y: 0,
@@ -39,13 +39,13 @@ function Solutions({ scrollWidth }) {
             end: `70%-=${scrollWidth} 20%`,
             scrub: 1,
           },
-        }
+        },
       );
     });
 
     gsap.fromTo(
       decoWord,
-      { x: -100, opacity: 0 },
+      {x: -100, opacity: 0},
       {
         x: 0,
         opacity: 0.02,
@@ -55,12 +55,12 @@ function Solutions({ scrollWidth }) {
           end: `70%-=${scrollWidth} 20%`,
           scrub: 1,
         },
-      }
+      },
     );
 
     gsap.fromTo(
       colorSpan,
-      { autoAlpha: 0 },
+      {autoAlpha: 0},
       {
         autoAlpha: 1,
         scrollTrigger: {
@@ -69,12 +69,12 @@ function Solutions({ scrollWidth }) {
           end: `70%-=${scrollWidth} 20%`,
           scrub: 1,
         },
-      }
+      },
     );
 
     gsap.fromTo(
       descriptionIntro,
-      { y: 100, autoAlpha: 0 },
+      {y: 100, autoAlpha: 0},
       {
         y: 0,
         autoAlpha: 1,
@@ -84,13 +84,13 @@ function Solutions({ scrollWidth }) {
           end: `70%-=${scrollWidth} 20%`,
           scrub: 1,
         },
-      }
+      },
     );
 
     return () => {
-      ScrollTrigger.getAll().forEach((st) => st.kill());
+      ScrollTrigger.getAll().forEach(st => st.kill());
       gsap.set([decoWord, colorSpan, descriptionIntro, ...children], {
-        clearProps: "all",
+        clearProps: 'all',
       });
     };
   }, [scrollWidth]);
@@ -116,10 +116,10 @@ function Solutions({ scrollWidth }) {
         <p className={styles.decoWord} ref={decoWordRef}>
           Social
         </p>
-        <h2>
-          Digitale{" "}
+        <h2 className={styles.solutionsHeader}>
+          Digitale{' '}
           <span className="color" ref={colorSpanRef}>
-            Effizienz{" "}
+            Effizienz{' '}
           </span>
           <br />
           gleich um die Ecke

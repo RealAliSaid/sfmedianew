@@ -1,5 +1,5 @@
-import React from "react";
-import styles from "./Impressum.module.css";
+import React from 'react';
+import styles from './Impressum.module.css';
 
 function Impressum() {
   return (
@@ -19,9 +19,9 @@ function Impressum() {
 
       <h4>Kontakt</h4>
       <p>
-        Telefon: 0033661628315
+        Telefon: 0157 34368701
         <br />
-        E-Mail: alexis.bouchama@gmx.de
+        E-Mail: Kontakt@media-sf.de
       </p>
 
       <h4>EU-Streitschlichtung</h4>
@@ -31,8 +31,7 @@ function Impressum() {
         <a
           href="https://ec.europa.eu/consumers/odr/"
           target="_blank"
-          rel="noopener noreferrer"
-        >
+          rel="noopener noreferrer">
           https://ec.europa.eu/consumers/odr/
         </a>
         .<br /> Unsere E-Mail-Adresse finden Sie oben im Impressum.

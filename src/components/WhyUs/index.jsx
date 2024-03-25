@@ -1,15 +1,15 @@
-import { useRef, useEffect } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import useScrollRotateAnimation from "../../hooks/useScrollRotateAnimation";
-import tick from "../../assets/images/others/tick.svg";
-import crosshair from "../../assets/images/decorations/crosshair.svg";
-import circleDashed from "../../assets/images/decorations/circleDashed.svg";
-import styles from "./WhyUs.module.css";
+import {useRef, useEffect} from 'react';
+import gsap from 'gsap';
+import {ScrollTrigger} from 'gsap/ScrollTrigger';
+import useScrollRotateAnimation from '../../hooks/useScrollRotateAnimation';
+import tick from '../../assets/images/others/tick.svg';
+import crosshair from '../../assets/images/decorations/crosshair.svg';
+import circleDashed from '../../assets/images/decorations/circleDashed.svg';
+import styles from './WhyUs.module.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
-function WhyUs({ scrollWidth }) {
+function WhyUs({scrollWidth}) {
   useScrollRotateAnimation(styles.circleDashed);
 
   const decoWordRef = useRef(null);
@@ -25,7 +25,7 @@ function WhyUs({ scrollWidth }) {
 
     gsap.fromTo(
       decoWord,
-      { x: -100, opacity: 0 },
+      {x: -100, opacity: 0},
       {
         x: 0,
         opacity: 0.02,
@@ -35,12 +35,12 @@ function WhyUs({ scrollWidth }) {
           end: `70%-=${scrollWidth} 20%`,
           scrub: 1,
         },
-      }
+      },
     );
 
     gsap.fromTo(
       colorSpan,
-      { autoAlpha: 0 },
+      {autoAlpha: 0},
       {
         autoAlpha: 1,
         scrollTrigger: {
@@ -49,13 +49,13 @@ function WhyUs({ scrollWidth }) {
           end: `70%-=${scrollWidth} 20%`,
           scrub: 1,
         },
-      }
+      },
     );
 
     children.forEach((child, index) => {
       gsap.fromTo(
         child,
-        { y: 100, autoAlpha: 0 },
+        {y: 100, autoAlpha: 0},
         {
           y: 0,
           autoAlpha: 1,
@@ -65,14 +65,14 @@ function WhyUs({ scrollWidth }) {
             end: `70%-=${scrollWidth} 20%`,
             scrub: 1,
           },
-        }
+        },
       );
     });
 
     return () => {
-      ScrollTrigger.getAll().forEach((st) => st.kill());
+      ScrollTrigger.getAll().forEach(st => st.kill());
       gsap.set([decoWord, colorSpan, ...children], {
-        clearProps: "all",
+        clearProps: 'all',
       });
     };
   }, [scrollWidth]);
@@ -94,10 +94,10 @@ function WhyUs({ scrollWidth }) {
           <p className={styles.decoWord} ref={decoWordRef}>
             Media
           </p>
-          <h2>
-            Konvertieren Sie Ihre <br />{" "}
+          <h2 className={styles.whyUsHeader}>
+            Konvertieren Sie Ihre <br />{' '}
             <span className="color" ref={colorSpanRef}>
-              Followers{" "}
+              Follower{' '}
             </span>
             in Leads
           </h2>

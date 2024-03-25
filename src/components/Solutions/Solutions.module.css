@@ -121,6 +121,10 @@ p.decoWord {
 }
 
 @media screen and (max-width: 980px) {
+  .solutionsHeader {
+    font-size: 40px;
+    text-align: center;
+  }
   .solutions {
     padding: 20rem 5%;
   }
