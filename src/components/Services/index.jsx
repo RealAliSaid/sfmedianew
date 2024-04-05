@@ -59,9 +59,10 @@ function Services() {
             src={crosshair}
             alt="crosshair decoration"
           />
-          <p className={styles.decoWord} ref={decoWordRef}>
-            Agentur
-          </p>
+         <p className={`${styles.decoWord} _decoWord_rzkpr_108`} style={{ opacity: 0.0199, transform: 'translate3d(-0.3112px, 0px, 0px)' }}>
+  Agentur
+</p>
+
           <h2>
             Unsere
             <br />

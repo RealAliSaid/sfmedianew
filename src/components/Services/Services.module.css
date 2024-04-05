@@ -108,10 +108,18 @@ p.decoWord {
   font-family: var(--font-poppins);
 }
 
+.container {
+  position: relative;
+}
+
 .decoWord {
+  position: absolute;
+  top: 0;
+  left: 0;
   color: grey;
   /* Other styles */
 }
+
 
 .crosshair {
   opacity: 0.5;
