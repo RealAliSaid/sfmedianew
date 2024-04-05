@@ -28,53 +28,31 @@ function Services({ scrollWidth }) {
     const colorSpan = colorSpanRef.current;
     const servicesList = servicesListRef.current;
 
-    gsap.from(decoWord, {
-      scrollTrigger: {
-        trigger: decoWord,
-        start: `50%+=${scrollWidth * 1.5} 80%`, // Delays start and increases the added scroll width.
-end: `70%-=${scrollWidth * 1.5} 10%`, // Delays end, extending the animation duration.
-
-        scrub: 1,
-      },
-      y: 50,
-      autoAlpha: 0,
-      ease: "none",
+    ScrollTrigger.create({
+      trigger: decoWord,
+      start: `top+=${scrollWidth} center`,
+      onEnter: () => gsap.set(decoWord, { autoAlpha: 1 }),
     });
 
-    gsap.from(colorSpan, {
-      scrollTrigger: {
-        trigger: colorSpan,
-        start: `50%+=${scrollWidth * 1.5} 80%`, // Delays start and increases the added scroll width.
-end: `70%-=${scrollWidth * 1.5} 10%`, // Delays end, extending the animation duration.
-
-        scrub: 1,
-      },
-      y: 50,
-      autoAlpha: 0,
-      ease: "none",
+    ScrollTrigger.create({
+      trigger: colorSpan,
+      start: `top+=${scrollWidth} center`,
+      onEnter: () => gsap.set(colorSpan, { autoAlpha: 1 }),
     });
 
     const children = Array.from(servicesList.children);
 
     children.forEach((child) => {
-      gsap.from(child, {
-        scrollTrigger: {
-          trigger: child,
-          start: `50%+=${scrollWidth * 1.5} 80%`, // Delays start and increases the added scroll width.
-end: `70%-=${scrollWidth * 1.5} 10%`, // Delays end, extending the animation duration.
-scrub: 1,
-        },
-        y: 50,
-        autoAlpha: 0,
-        ease: "none",
+      ScrollTrigger.create({
+        trigger: child,
+        start: `top+=${scrollWidth} center`,
+        onEnter: () => gsap.set(child, { autoAlpha: 1 }),
       });
     });
 
     return () => {
       ScrollTrigger.getAll().forEach((st) => st.kill());
-      gsap.set([decoWord, colorSpan, ...children], {
-        clearProps: "all",
-      });
+      gsap.set([decoWord, colorSpan, ...children], { clearProps: "all" });
     };
   }, [scrollWidth]);
 
