@@ -63,7 +63,7 @@ function Services({ scrollWidth }) {
     });
 
     return () => {
-      ScrollTrigger.getAll().forEach((st) => st.kill());
+      // Remove ScrollTrigger configuration from the return function
       gsap.set([decoWord, colorSpan, ...children], { clearProps: "all" });
     };
   }, [scrollWidth]);
