@@ -31,8 +31,9 @@ function Services({ scrollWidth }) {
     gsap.from(decoWord, {
       scrollTrigger: {
         trigger: decoWord,
-        start: `50%+=${scrollWidth} 70%`,
-        end: `70%-=${scrollWidth} 20%`,
+        start: `50%+=${scrollWidth / 2} 60%`, // Starts earlier and reduces the added scroll width.
+        end: `70%-=${scrollWidth / 2} 40%`, // Ends sooner, reducing the animation duration.
+
         scrub: 1,
       },
       y: 50,
@@ -43,8 +44,9 @@ function Services({ scrollWidth }) {
     gsap.from(colorSpan, {
       scrollTrigger: {
         trigger: colorSpan,
-        start: `50%+=${scrollWidth} 70%`,
-        end: `70%-=${scrollWidth} 20%`,
+        start: `50%+=${scrollWidth * 1.5} 80%`, // Delays start and increases the added scroll width.
+        end: `70%-=${scrollWidth * 1.5} 10%`, // Delays end, extending the animation duration.
+
         scrub: 1,
       },
       y: 50,
