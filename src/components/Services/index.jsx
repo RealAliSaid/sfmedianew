@@ -27,22 +27,43 @@ function Services({ scrollWidth }) {
     const decoWord = decoWordRef.current;
     const colorSpan = colorSpanRef.current;
     const servicesList = servicesListRef.current;
-  
-    // Animation for decoWord
-    gsap.fromTo(decoWord, { autoAlpha: 0, y: 50 }, { autoAlpha: 1, y: 0, duration: 0.5 });
-  
-    // Animation for colorSpan
-    gsap.fromTo(colorSpan, { autoAlpha: 0, y: 50 }, { autoAlpha: 1, y: 0, duration: 0.5 });
-  
-    // Animation for servicesList children
-    Array.from(servicesList.children).forEach(child => {
-      gsap.fromTo(child, { autoAlpha: 0, y: 50 }, { autoAlpha: 1, y: 0, duration: 0.5 });
+
+    gsap.from(decoWord, {
+      scrollTrigger: {
+        trigger: decoWord,
+        start: "top bottom",
+        end: "center center",
+        scrub: true,
+      },
+      autoAlpha: 0,
     });
-  
-    // No cleanup needed
-  
-  }, []); // Empty dependency array ensures this effect runs only once after initial render
-  
+
+    gsap.from(colorSpan, {
+      scrollTrigger: {
+        trigger: colorSpan,
+        start: "top bottom",
+        end: "center center",
+        scrub: true,
+      },
+      autoAlpha: 0,
+    });
+
+    const children = Array.from(servicesList.children);
+
+    children.forEach((child, index) => {
+      gsap.from(child, {
+        scrollTrigger: {
+          trigger: child,
+          start: "top bottom",
+          end: "center center",
+          scrub: true,
+        },
+        autoAlpha: 0,
+      });
+    });
+
+    
+  }, [scrollWidth]);
 
   return (
     <section className={styles.services} id="dienstleistungen">
