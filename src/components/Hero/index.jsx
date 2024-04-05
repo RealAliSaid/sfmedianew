@@ -17,7 +17,7 @@ const Home = () => {
       },
       opacity: 0,
       y: 50,
-      duration: 1
+      duration: 3
     });
 
     // Animation for the button
