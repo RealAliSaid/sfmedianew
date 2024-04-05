@@ -35,17 +35,19 @@ const Home = () => {
 
   return (
     <div className={styles.home} id="startseite">
-      <p className={`${styles.hero_text} hero-text`}>
-        Deine Ideen, konkret umgesetzt ob Webdesign, Social Media oder Leads.
-        Wir setzen deine Ideen konkret um. Ob Social Media, Webdesign oder
-        leads.
-      </p>
-      <a
-        className={`${styles.calendy_button} calendy-button`}
-        target="_blank"
-        href="https://calendly.com/alexis-bouchama/meeting-call">
-        Erstgespräch
-      </a>
+      <div className={styles.flexContainer}>
+        <p className={`${styles.hero_text} hero-text`}>
+          Deine Ideen, konkret umgesetzt ob Webdesign, Social Media oder Leads.
+          Wir setzen deine Ideen konkret um. Ob Social Media, Webdesign oder
+          leads.
+        </p>
+        <a
+          className={`${styles.calendy_button} calendy-button`}
+          target="_blank"
+          href="https://calendly.com/alexis-bouchama/meeting-call">
+          Erstgespräch
+        </a>
+      </div>
     </div>
   );
 };
