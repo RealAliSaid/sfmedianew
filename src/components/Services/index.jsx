@@ -1,8 +1,10 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import useScrollRotateAnimation from "../../hooks/useScrollRotateAnimation";
 import crosshair from "../../assets/images/decorations/crosshair.svg";
 import circles from "../../assets/images/decorations/circles.svg";
+import circleDashed from "../../assets/images/decorations/circleDashed.svg";
 import styles from "./Services.module.css";
 import ServicesItem from "./ServicesList/index";
 import werbungen from "../../assets/images/servicesIcons/werbungen.png";
@@ -12,7 +14,9 @@ import email_marketing from "../../assets/images/servicesIcons/email-marketing.p
 import copywriting from "../../assets/images/servicesIcons/copywriting.png";
 import landingpages from "../../assets/images/servicesIcons/landingpages.png";
 
-function Services() {
+gsap.registerPlugin(ScrollTrigger);
+
+function Services({ scrollWidth }) {
   useScrollRotateAnimation(styles.circleDashed);
 
   const decoWordRef = useRef(null);
@@ -23,32 +27,46 @@ function Services() {
     const decoWord = decoWordRef.current;
     const colorSpan = colorSpanRef.current;
     const servicesList = servicesListRef.current;
-    
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.5 // Trigger animation when 50% of the element is visible
-    };
 
-    const observerCallback = (entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          gsap.fromTo(entry.target, { autoAlpha: 0, y: 50 }, { autoAlpha: 1, y: 0, duration: 0.5 });
-          observer.unobserve(entry.target); // Stop observing once animation is triggered
-        }
+    gsap.from(decoWord, {
+      scrollTrigger: {
+        trigger: decoWord,
+        start: "top bottom",
+        end: "center center",
+        scrub: true,
+      },
+      autoAlpha: 0,
+    });
+
+    gsap.from(colorSpan, {
+      scrollTrigger: {
+        trigger: colorSpan,
+        start: "top bottom",
+        end: "center center",
+        scrub: true,
+      },
+      autoAlpha: 0,
+    });
+
+    const children = Array.from(servicesList.children);
+
+    children.forEach((child, index) => {
+      gsap.from(child, {
+        scrollTrigger: {
+          trigger: child,
+          start: "top bottom",
+          end: "center center",
+          scrub: true,
+        },
+        autoAlpha: 0,
       });
+    });
+
+    return () => {
+      // Remove ScrollTrigger configuration from the return function
+      gsap.set([decoWord, colorSpan, ...children], { clearProps: "all" });
     };
-
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
-    
-    // Observe each element
-    observer.observe(decoWord);
-    observer.observe(colorSpan);
-    Array.from(servicesList.children).forEach(child => observer.observe(child));
-
-    // Cleanup function
-    return () => observer.disconnect();
-  }, []);
+  }, [scrollWidth]);
 
   return (
     <section className={styles.services} id="dienstleistungen">
@@ -59,10 +77,9 @@ function Services() {
             src={crosshair}
             alt="crosshair decoration"
           />
-         <p className={`${styles.decoWord} _decoWord_rzkpr_108`} style={{ opacity: 0.0199, transform: 'translate3d(-0.3112px, 0px, 0px)' }}>
-  Agentur
-</p>
-
+          <p className={styles.decoWord} ref={decoWordRef}>
+            Agentur
+          </p>
           <h2>
             Unsere
             <br />
@@ -79,7 +96,11 @@ function Services() {
           </p>
         </div>
         <div className={styles.servicesList} ref={servicesListRef}>
-          
+          <img
+            className={styles.circles}
+            src={circles}
+            alt="simple circles decoration"
+          />
           <ServicesItem
             icon={<img src={werbungen} alt="werbungen icon" />}
             title="Werbungen"
