@@ -23,26 +23,21 @@ function Services({ scrollWidth }) {
   const colorSpanRef = useRef(null);
   const servicesListRef = useRef(null);
 
-
-
-
-
   useEffect(() => {
     const decoWord = decoWordRef.current;
     const colorSpan = colorSpanRef.current;
     const servicesList = servicesListRef.current;
-  
-    // Adjusting the animation to start as soon as the element enters the viewport
+
     gsap.from(decoWord, {
       scrollTrigger: {
         trigger: decoWord,
-        start: "top bottom", // Animation starts the moment the top of the element enters the bottom of the viewport
-        end: "center center", // Animation ends by the time the element hits the center of the viewport
+        start: "top bottom",
+        end: "center center",
         scrub: true,
       },
       autoAlpha: 0,
     });
-  
+
     gsap.from(colorSpan, {
       scrollTrigger: {
         trigger: colorSpan,
@@ -52,9 +47,9 @@ function Services({ scrollWidth }) {
       },
       autoAlpha: 0,
     });
-  
+
     const children = Array.from(servicesList.children);
-  
+
     children.forEach((child, index) => {
       gsap.from(child, {
         scrollTrigger: {
@@ -66,18 +61,12 @@ function Services({ scrollWidth }) {
         autoAlpha: 0,
       });
     });
-  
+
     return () => {
       ScrollTrigger.getAll().forEach((st) => st.kill());
       gsap.set([decoWord, colorSpan, ...children], { clearProps: "all" });
     };
   }, [scrollWidth]);
-  
-
-
-
-
-
 
   return (
     <section className={styles.services} id="dienstleistungen">
@@ -87,11 +76,6 @@ function Services({ scrollWidth }) {
             className={styles.crosshair}
             src={crosshair}
             alt="crosshair decoration"
-          />
-          <img
-            className={styles.circleDashed}
-            src={circleDashed}
-            alt="dashed circle decoration"
           />
           <p className={styles.decoWord} ref={decoWordRef}>
             Agentur
