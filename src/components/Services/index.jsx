@@ -78,11 +78,7 @@ function Services() {
           </p>
         </div>
         <div className={styles.servicesList} ref={servicesListRef}>
-          <img
-            className={styles.circles}
-            src={circles}
-            alt="simple circles decoration"
-          />
+          
           <ServicesItem
             icon={<img src={werbungen} alt="werbungen icon" />}
             title="Werbungen"

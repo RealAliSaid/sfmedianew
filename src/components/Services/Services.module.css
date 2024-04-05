@@ -108,6 +108,11 @@ p.decoWord {
   font-family: var(--font-poppins);
 }
 
+.decoWord {
+  color: grey;
+  /* Other styles */
+}
+
 .crosshair {
   opacity: 0.5;
   top: 50%;
