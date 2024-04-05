@@ -32,13 +32,12 @@ function Services({ scrollWidth }) {
     const colorSpan = colorSpanRef.current;
     const servicesList = servicesListRef.current;
   
-    // Adjust the start point to be when the element hits the bottom of the screen
-    // and end when the element is in the middle of the screen
+    // Adjusting the animation to start as soon as the element enters the viewport
     gsap.from(decoWord, {
       scrollTrigger: {
         trigger: decoWord,
-        start: "bottom bottom", // Starts fading in when the bottom of the element hits the bottom of the viewport
-        end: "center center", // Completes the fade in when the element is in the center of the viewport
+        start: "top bottom", // Animation starts the moment the top of the element enters the bottom of the viewport
+        end: "center center", // Animation ends by the time the element hits the center of the viewport
         scrub: true,
       },
       autoAlpha: 0,
@@ -47,7 +46,7 @@ function Services({ scrollWidth }) {
     gsap.from(colorSpan, {
       scrollTrigger: {
         trigger: colorSpan,
-        start: "bottom bottom",
+        start: "top bottom",
         end: "center center",
         scrub: true,
       },
@@ -60,7 +59,7 @@ function Services({ scrollWidth }) {
       gsap.from(child, {
         scrollTrigger: {
           trigger: child,
-          start: "bottom bottom",
+          start: "top bottom",
           end: "center center",
           scrub: true,
         },
