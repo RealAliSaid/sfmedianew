@@ -23,38 +23,62 @@ function Services({ scrollWidth }) {
   const colorSpanRef = useRef(null);
   const servicesListRef = useRef(null);
 
+
+
+
+
   useEffect(() => {
     const decoWord = decoWordRef.current;
     const colorSpan = colorSpanRef.current;
     const servicesList = servicesListRef.current;
-
-    ScrollTrigger.create({
-      trigger: decoWord,
-      start: `top+=${scrollWidth} center`,
-      onEnter: () => gsap.set(decoWord, { autoAlpha: 1 }),
+  
+    // Adjust the start point to be when the element hits the bottom of the screen
+    // and end when the element is in the middle of the screen
+    gsap.from(decoWord, {
+      scrollTrigger: {
+        trigger: decoWord,
+        start: "bottom bottom", // Starts fading in when the bottom of the element hits the bottom of the viewport
+        end: "center center", // Completes the fade in when the element is in the center of the viewport
+        scrub: true,
+      },
+      autoAlpha: 0,
     });
-
-    ScrollTrigger.create({
-      trigger: colorSpan,
-      start: `top+=${scrollWidth} center`,
-      onEnter: () => gsap.set(colorSpan, { autoAlpha: 1 }),
+  
+    gsap.from(colorSpan, {
+      scrollTrigger: {
+        trigger: colorSpan,
+        start: "bottom bottom",
+        end: "center center",
+        scrub: true,
+      },
+      autoAlpha: 0,
     });
-
+  
     const children = Array.from(servicesList.children);
-
-    children.forEach((child) => {
-      ScrollTrigger.create({
-        trigger: child,
-        start: `top+=${scrollWidth} center`,
-        onEnter: () => gsap.set(child, { autoAlpha: 1 }),
+  
+    children.forEach((child, index) => {
+      gsap.from(child, {
+        scrollTrigger: {
+          trigger: child,
+          start: "bottom bottom",
+          end: "center center",
+          scrub: true,
+        },
+        autoAlpha: 0,
       });
     });
-
+  
     return () => {
       ScrollTrigger.getAll().forEach((st) => st.kill());
       gsap.set([decoWord, colorSpan, ...children], { clearProps: "all" });
     };
   }, [scrollWidth]);
+  
+
+
+
+
+
 
   return (
     <section className={styles.services} id="dienstleistungen">
