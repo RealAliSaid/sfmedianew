@@ -11,9 +11,22 @@
   justify-content: center;
 }
 
-.smallText {
-  font-size: 0.8em; /* Adjust the font size as needed */
+.flexContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh; /* Adjust the height as needed */
 }
+
+.smallText {
+  font-size: 0.6em; /* Adjust the font size as needed */
+}
+
+.largeText {
+  font-size: 1.2em; /* Adjust the font size as needed */
+}
+
 
 
 .flexContainer {
