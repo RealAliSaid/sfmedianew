@@ -20,6 +20,15 @@
   height: 80vh; /* Adjust the height as needed */
 }
 
+.smallText {
+  font-size: 0.6em; /* Adjust the font size as needed */
+}
+
+.largeText {
+  font-size: 1.2em; /* Adjust the font size as needed */
+}
+
+
 
 .hero {
   width: 100%;
