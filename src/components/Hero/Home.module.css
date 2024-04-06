@@ -133,16 +133,19 @@
   margin-top: 1rem;
 }
 
+ /* Button */
+
+ 
 .calendy_button {
-  /* Button */
+ 
   background: #ffffff;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
-  padding: 12px;
+  padding: 20px; /* Increase padding for larger button */
   margin-top: 3rem;
   color: black;
   font-weight: 500;
-  width: 127px;
+  width: 250px; /* Adjust the width as needed */
   text-align: center;
 }
 
@@ -150,6 +153,7 @@
   background: black;
   color: white;
 }
+
 
 @media screen and (max-width: 980px) {
   .home {
