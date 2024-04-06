@@ -11,6 +11,11 @@
   justify-content: center;
 }
 
+.smallText {
+  font-size: 0.8em; /* Adjust the font size as needed */
+}
+
+
 .flexContainer {
   display: flex;
   flex-direction: column;

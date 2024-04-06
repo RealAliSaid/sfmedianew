@@ -37,9 +37,8 @@ const Home = () => {
     <div className={styles.home} id="startseite">
       <div className={styles.flexContainer}>
         <p className={`${styles.hero_text} hero-text`}>
-          Deine Ideen, konkret umgesetzt ob Webdesign, Social Media oder Leads.
-          Wir setzen deine Ideen konkret um. Ob Social Media, Webdesign oder
-          leads.
+          <span className={styles.smallText}>Vom Pixel zu Profit.</span><br />
+          Deine creative Marketing Agentur für Social Media, Webdesign und Leads, die dein Unternehmen online richtig aufstellt.
         </p>
         <a
           className={`${styles.calendy_button} calendy-button`}
