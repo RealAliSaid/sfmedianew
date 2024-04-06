@@ -44,7 +44,7 @@ const Home = () => {
           className={`${styles.calendy_button} calendy-button`}
           target="_blank"
           href="https://calendly.com/alexis-bouchama/meeting-call">
-          Erstgespräch
+          Mit dem Team sprechen
         </a>
       </div>
     </div>
