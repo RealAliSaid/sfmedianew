@@ -31,10 +31,9 @@
 .flexContainer {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
   height: 80vh; /* Adjust the height as needed */
-  text-align: center; /* Center-align text */
 }
 
 .hero_text {
