@@ -38,7 +38,7 @@ const Home = () => {
       <div className={styles.flexContainer}>
         <p className={`${styles.hero_text} hero-text`}>
           <span className={styles.smallText}>Vom Pixel zu Profit.</span><br />
-          <span className={styles.largeText}>Deine kreative Marketing-Agentur für Social Media, Webdesign und Leads, die dein Unternehmen online richtig aufstellt.</span>
+          <span className={styles.largeText}>Eine kreative Marketing-Agentur für Social Media, Webdesign und Leads, die ihr Unternehmen online richtig aufstellt.</span>
         </p>
         <a
           className={`${styles.calendy_button} calendy-button`}
