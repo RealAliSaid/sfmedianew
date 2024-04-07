@@ -6,13 +6,13 @@
 
 .content h2 {
   margin-bottom: 20px;
-  font-size: 1.0rem; /* Adjust font size as needed */
+  font-size: 1.2rem; /* Adjust font size as needed */
 }
 
 .content p,
 .content h4 {
   margin-bottom: 10px;
-  font-size: 1.2rem; /* Adjust font size as needed */
+  font-size: 1.0rem; /* Adjust font size as needed */
 }
 
 .content ul {
