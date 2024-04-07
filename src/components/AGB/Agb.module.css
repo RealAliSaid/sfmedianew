@@ -1,29 +1,29 @@
 .content {
-  max-width: 90%; /* Adjust the percentage as needed */
+  max-width: 90%;
   margin: 0 auto;
-  text-align: center; /* Center-align text */
-  padding: 20px; /* Adjust the padding as needed */
-  font-size: 16px; /* Adjust the font size as needed */
+  text-align: center;
+  padding: 15px;
+  font-size: 14px; /* Adjusted to a smaller font size */
 }
 
 .content h2 {
-  margin-bottom: 40px; /* Adjust the margin as needed */
+  margin-bottom: 30px; /* Adjusted margin */
 }
 
 .content p,
 .content h4 {
-  margin-bottom: 15px; /* Adjust the margin as needed */
+  margin-bottom: 10px; /* Adjusted margin */
 }
 
 .content ul {
-  font-size: 1.6rem; /* Adjust the font size as needed */
-  margin: 15px 0; /* Adjust the margin as needed */
+  font-size: 1.4rem; /* Adjusted font size */
+  margin: 10px 0;
 }
 
 .content li {
   list-style-type: disc;
-  margin-left: 20px; /* Adjust the margin as needed */
-  margin-bottom: 6px; /* Adjust the margin as needed */
+  margin-left: 15px; /* Adjusted margin */
+  margin-bottom: 4px; /* Adjusted margin */
 }
 
 .content h2,
