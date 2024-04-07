@@ -4,7 +4,7 @@ import styles from "./Datenschutz.module.css";
 function Datenschutz() {
   return (
     <div className={styles.content}>
-      <h2>Datenschutzerklärung</h2>
+      <h3>Datenschutzerklärung</h3>
 
       <p>
         Im Folgenden informieren wir über die Erhebung personenbezogener Daten
