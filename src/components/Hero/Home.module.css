@@ -139,13 +139,17 @@
 
 
 .calendy_button {
-  font-size: 16px; /* Adjust the font size as desired */
+
+    font-size: 14px; /* Adjust the font size as desired */
+    padding: 10px 20px; /* Adjust the padding to make the button smaller */
+    margin-top: 2rem; /* Adjust the top margin to move the button up */
+
+  
+ 
   font-weight: bold; /* Make the text bold */
   background: #ffffff;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
-  padding: 20px; /* Increase padding for larger button */
-  margin-top: 3rem;
   color: black;
   
   width: 250px; /* Adjust the width as needed */
