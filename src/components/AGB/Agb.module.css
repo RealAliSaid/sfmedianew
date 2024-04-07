@@ -2,28 +2,28 @@
   max-width: 90%; /* Adjust the percentage as needed */
   margin: 0 auto;
   text-align: center; /* Center-align text */
+  padding: 20px; /* Adjust the padding as needed */
+  font-size: 16px; /* Adjust the font size as needed */
 }
 
 .content h2 {
-  margin-bottom: 20px;
-  font-size: 1.4rem; /* Adjust font size as needed */
+  margin-bottom: 40px; /* Adjust the margin as needed */
 }
 
 .content p,
 .content h4 {
-  margin-bottom: 10px;
-  font-size: 1.2rem; /* Adjust font size as needed */
+  margin-bottom: 15px; /* Adjust the margin as needed */
 }
 
 .content ul {
-  font-size: 1.2rem; /* Adjust font size as needed */
-  margin: 10px 0;
+  font-size: 1.6rem; /* Adjust the font size as needed */
+  margin: 15px 0; /* Adjust the margin as needed */
 }
 
 .content li {
   list-style-type: disc;
-  margin-left: 15px;
-  margin-bottom: 5px;
+  margin-left: 20px; /* Adjust the margin as needed */
+  margin-bottom: 6px; /* Adjust the margin as needed */
 }
 
 .content h2,
