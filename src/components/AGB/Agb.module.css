@@ -1,29 +1,29 @@
 .content {
-  max-width: 95%;
+  max-width: 90%; /* Adjust the percentage as needed */
   margin: 0 auto;
-  text-align: center;
-  padding: 15px;
-  font-size: 12px; /* Adjust the font size here */
+  text-align: center; /* Center-align text */
 }
 
 .content h2 {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+  font-size: 1.2rem; /* Adjust font size as needed */
 }
 
 .content p,
 .content h4 {
   margin-bottom: 10px;
+  font-size: 1.0rem; /* Adjust font size as needed */
 }
 
 .content ul {
-  font-size: 1.2rem; /* Adjust the font size here */
+  font-size: 1.2rem; /* Adjust font size as needed */
   margin: 10px 0;
 }
 
 .content li {
   list-style-type: disc;
   margin-left: 15px;
-  margin-bottom: 4px;
+  margin-bottom: 5px;
 }
 
 .content h2,
