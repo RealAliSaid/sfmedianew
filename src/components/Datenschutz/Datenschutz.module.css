@@ -1,19 +1,22 @@
 .content {
   max-width: 1280px;
   margin: 0 auto;
+  text-align: center; /* Center-align text */
 }
 
 .content h2 {
   margin-bottom: 60px;
+  font-size: 2rem; /* Adjust font size as needed */
 }
 
 .content p,
 .content h4 {
   margin-bottom: 20px;
+  font-size: 1.6rem; /* Adjust font size as needed */
 }
 
 .content ul {
-  font-size: 1.8rem;
+  font-size: 1.6rem; /* Adjust font size as needed */
   margin: 20px 0;
 }
 
