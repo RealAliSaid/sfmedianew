@@ -5,25 +5,25 @@
 }
 
 .content h2 {
-  margin-bottom: 60px;
-  font-size: 2rem; /* Adjust font size as needed */
+  margin-bottom: 30px;
+  font-size: 1.6rem; /* Adjust font size as needed */
 }
 
 .content p,
 .content h4 {
-  margin-bottom: 20px;
-  font-size: 1.6rem; /* Adjust font size as needed */
+  margin-bottom: 15px;
+  font-size: 1.4rem; /* Adjust font size as needed */
 }
 
 .content ul {
-  font-size: 1.6rem; /* Adjust font size as needed */
-  margin: 20px 0;
+  font-size: 1.4rem; /* Adjust font size as needed */
+  margin: 15px 0;
 }
 
 .content li {
   list-style-type: disc;
-  margin-left: 26px;
-  margin-bottom: 8px;
+  margin-left: 20px;
+  margin-bottom: 5px;
 }
 
 .content h2,
