@@ -24,7 +24,7 @@ function ContactForm() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await fetch("https://www.media-sf.de/api/sendmail", {
+      const response = await fetch("https://sfmedia-agentur.com/api/sendmail", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
